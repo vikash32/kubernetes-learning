@@ -293,10 +293,10 @@ curl -k https://172.24.48.64:32718/nginx
 ```    
 This Document is already long enough to go to sleep mode. But trust me once you get it, it will be matter of minute to set up nginx ingress. I highly recommend to go through the official documentation.
 
-Ingress nginx configuration guide
+Ingress nginx configuration guide (https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/)
 
-Kubernetes RBAC
+Kubernetes RBAC (https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 
-Kubernetes Ingress
+Kubernetes Ingress (https://kubernetes.io/docs/concepts/services-networking/ingress/)
 
 Thanks - Vikash
