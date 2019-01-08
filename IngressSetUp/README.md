@@ -1,4 +1,4 @@
-# kubernetes-learning
+# Nginx Ingress Set up 
 When i started working on Kubernetes almost 2.5 years back, Ingress was one of the nightmare for me (Yes, I had a list of nightmare like RBAC, ServiceAccount etc). Eventually i learned it, And i wanted to make a brief default full fledge working ingress introduction here.
 
 kubectl (1.11.4), ingress-nginx (https://github.com/kubernetes/ingress-nginx)
