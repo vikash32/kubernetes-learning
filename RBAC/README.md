@@ -1,7 +1,9 @@
 # Provide user access to kubernetes cluster. 
 
 We are going to use authentication/authorization on kubernetes cluster through certificate using openssl, We can create certificate for user specific and assign that user to specific group. 
-For example: Use "CN" as user name and "O" as group. So, in this case username is "devuser" and the group is "readonly".
+For example: "/CN" as user name and "/O" as group. So, in this case username is "devuser" and the group is "readonly".
+
+Task: we create a user "devuser" and create a group "readonly". Then create a clusterrole for this group "readonly" to have only get/list/watch access on all the resources. And finally we map these clusterrole with our readonly group.
 
 These are the steps we are going to execute to provide a user say "devuser" of access get/list/watch of all the resources.
 ### Step1. : Create Private Key "devuser.key" and then create certifiate signing request file "devuser.csr"
@@ -9,6 +11,10 @@ These are the steps we are going to execute to provide a user say "devuser" of a
 openssl genrsa -out devuser.key 2048
 
 openssl req -new -key devuser.key -out devuser.csr -subj "/CN=devuser/O=readonly"
+
+### We can create as many user in different group as we want or we can put one user is multiple group like below. you can create keys for every user or use single key for all or group wise , it's all upto you.
+### openssl req -new -key devuser.key -out devuser.csr -subj "/CN=rahul/O=readonly/" # rahul user in readonly group
+### openssl req -new -key devuser.key -out devuser.csr -subj "/CN=vikash/O=admin/O=readonly" # vikash user in admin group and readonly group
 ```
 Now we have to signed the devuser.csr file through our certificate Authority generated on api server. You can get path of ca.crt/ca.key as given.
 `/etc/kubernetes/pki (kubeadm)`
