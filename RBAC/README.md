@@ -5,7 +5,6 @@ For example: "/CN" as user name and "/O" as group. So, in this case username is 
 
 Task: we create a user "devuser" and create a group "readonly". Then create a clusterrole for this group "readonly" to have only get/list/watch access on all the resources. And finally we map these clusterrole with our readonly group through clusterrolebinding
 
-These are the steps we are going to execute to provide a user say "devuser" of access get/list/watch of all the resources.
 ### Step1. : Create Private Key "devuser.key" and then create certifiate signing request file "devuser.csr"
 ```
 openssl genrsa -out devuser.key 2048
