@@ -5,7 +5,7 @@ For example: "/CN" as user name and "/O" as group. So, in this case username is 
 
 Task: we create a user "devuser" and create a group "readonly". Then create a clusterrole for this group "readonly" to have only get/list/watch access on all the resources. And finally we map these clusterrole with our readonly group through clusterrolebinding
 
-### Step1. : Create Private Key "devuser.key" and then create certifiate signing request file "devuser.csr"
+### Step1. : Create Private Key "devuser.key" and then create certifiate signing request file "devuser.csr", Execute from your local system
 ```
 openssl genrsa -out devuser.key 2048
 
@@ -25,7 +25,7 @@ Pricate Key : ca.key (kubeadm) or ca-key.pem (kubespray)
 ```
 You can copy ca.key,ca.crt,devuser.csr,devuser.key at a common place on your local system so that you can generate a signed certificate.
 
-### Step2. : Signed the "devuser.csr" file with ca.crt and ca.key file and create "devuser.crt" certificate file. 
+### Step2. : Signed the "devuser.csr" file with ca.crt and ca.key file and create "devuser.crt" certificate file. Execute from your local system
 
 ```
 openssl x509 -req -CA ca.crt -CAkey ca.key -CAcreateserial -days 730 -in devuser.csr -out devuser.crt
