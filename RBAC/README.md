@@ -9,8 +9,8 @@ openssl req -new -key devuser.key -out devuser.csr -subj "/CN=devuser/O=readonly
 ```
 
 Now we have to signed the devuser.csr file through our certificate Authority generated on api server. You can get path
-/etc/kubernetes/pki (kubeadm)
-/etc/kubernetes/ssl (kubespray)
+`/etc/kubernetes/pki (kubeadm)`
+`/etc/kubernetes/ssl (kubespray)`
 
 ```
 Certificate : ca.crt (kubeadm) or ca.key (kubespray)
