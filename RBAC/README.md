@@ -1,6 +1,6 @@
 # Provide user access to kubernetes cluster. 
 
-We are going to use authentication/authorization through certificate using openssl, We can create certificate for user specific and assign that user to specific group. 
+We are going to use authentication/authorization on kubernetes cluster through certificate using openssl, We can create certificate for user specific and assign that user to specific group. 
 For example: Use "CN" as user name and "O" as group. So, in this case username is "devuser" and the group is "readonly".
 
 These are the steps we are going to execute to provide a user say "devuser" of access get/list/watch of all the resources.
