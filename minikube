@@ -1,4 +1,4 @@
-Start minikube with different configuration
+### Start minikube with different configuration
 minikube start \
   --kubernetes-version v1.8.6 \
   --bootstrapper kubeadm \
