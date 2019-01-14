@@ -1,0 +1,8 @@
+Start minikube with different configuration
+minikube start \
+  --kubernetes-version v1.8.6 \
+  --bootstrapper kubeadm \
+  --v 7 \
+  --logtostderr \
+  --vm-driver=virtualbox \
+  --extra-config=apiserver.admission-control="Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,GenericAdmissionWebhook,ResourceQuota,PodPreset"
