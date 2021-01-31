@@ -1,0 +1,24 @@
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: devrootvik 
+spec:
+  domains:
+    - dev.rootvik.net
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: external-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: frontend-static-ip
+    networking.gke.io/managed-certificates: devrootvik
+spec:
+  rules:
+  - host: dev.rootvik.net
+    http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: nginx-svc
+          servicePort: 80
